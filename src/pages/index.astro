@@ -1,0 +1,73 @@
+---
+import Base from '../layouts/Base.astro';
+---
+
+<Base title="Dr. James Mansell — AI, Information, Institutional Transformation">
+
+  <section style="padding: 4rem 0 3rem;">
+    <p style="font-family: var(--font-serif); font-size: 1.65rem; line-height: 1.5; font-weight: 400; color: var(--color-text); max-width: 600px;">
+      You can't make good decisions about AI from a briefing paper.
+    </p>
+  </section>
+
+  <section style="padding: 0 0 3rem;">
+    <p style="font-size: 1.05rem; color: var(--color-text-secondary); line-height: 1.8; margin-bottom: 1.5rem;">
+      I'm an independent advisor helping senior leaders navigate AI and data transformation — not as a technology problem, but as a leadership, governance, and institutional adaptation challenge.
+    </p>
+    <p style="font-size: 1.05rem; color: var(--color-text-secondary); line-height: 1.8; margin-bottom: 1.5rem;">
+      I founded Social Investment in New Zealand — an outcomes-focused reform that reshaped how government invests in citizens. I've raised over $100 million for data and analytics capability across the state sector. I've just completed a PhD in the philosophy of information. And I've spent the last year going deep into AI — building, coaching, and learning what this actually means for how organisations adapt.
+    </p>
+    <p style="font-size: 1.05rem; color: var(--color-text-secondary); line-height: 1.8;">
+      I save you money. I don't help you spend money. My advice is independent.
+    </p>
+  </section>
+
+  <section style="padding: 2rem 0; border-top: 1px solid var(--color-border);">
+    <h2 style="font-size: 0.85rem; font-weight: 600; text-transform: uppercase; letter-spacing: 0.08em; color: var(--color-text-secondary); margin-bottom: 1.5rem;">What I do</h2>
+    <div style="display: grid; gap: 1rem;">
+      <p style="font-size: 1rem; line-height: 1.7;"><strong>Advisory & coaching</strong> — helping CEOs and boards understand AI at a depth where they can lead it, not just procure it.</p>
+      <p style="font-size: 1rem; line-height: 1.7;"><strong>Governance & institutional design</strong> — the structures, incentives, and culture that determine whether transformation actually takes hold.</p>
+      <p style="font-size: 1rem; line-height: 1.7;"><strong>Data strategy</strong> — how you manage, share, and organise your data determines whether AI works for you or against you.</p>
+      <p style="font-size: 1rem; line-height: 1.7;"><strong>Independent assessment</strong> — the person you call <em>before</em> you sign the big contract.</p>
+    </div>
+  </section>
+
+  <section style="padding: 2rem 0; border-top: 1px solid var(--color-border);">
+    <h2 style="font-size: 0.85rem; font-weight: 600; text-transform: uppercase; letter-spacing: 0.08em; color: var(--color-text-secondary); margin-bottom: 1.5rem;">Credentials</h2>
+    <div style="font-size: 0.95rem; color: var(--color-text-secondary); line-height: 2;">
+      <p>PhD Philosophy of Information · Victoria University of Wellington · Marsden Grant</p>
+      <p>Founded Social Investment · $100M+ raised across NZ government</p>
+      <p>Harvard Kennedy School · Wharton</p>
+      <p>Edmund Hillary Fellow</p>
+      <p>Trustee, NZ Data Trust</p>
+    </div>
+    <p style="margin-top: 1rem;"><a href="/about" style="font-size: 0.95rem;">Full background →</a></p>
+  </section>
+
+  <section style="padding: 2rem 0; border-top: 1px solid var(--color-border);">
+    <h2 style="font-size: 0.85rem; font-weight: 600; text-transform: uppercase; letter-spacing: 0.08em; color: var(--color-text-secondary); margin-bottom: 1.5rem;">Writing & Ideas</h2>
+    <p style="font-size: 1rem; color: var(--color-text-secondary); margin-bottom: 1rem;">
+      I'm publishing regularly on AI adaptation, data sovereignty, and what it actually takes to lead through this.
+    </p>
+    <div style="display: flex; gap: 1.5rem;">
+      <a href="https://drjamesmansell.substack.com" target="_blank" rel="noopener" style="font-size: 0.95rem;">Substack →</a>
+      <a href="https://nz.linkedin.com/in/jhmansell/" target="_blank" rel="noopener" style="font-size: 0.95rem;">LinkedIn →</a>
+    </div>
+  </section>
+
+  <section style="padding: 2rem 0; border-top: 1px solid var(--color-border);">
+    <h2 style="font-size: 0.85rem; font-weight: 600; text-transform: uppercase; letter-spacing: 0.08em; color: var(--color-text-secondary); margin-bottom: 1rem;">Start a conversation</h2>
+    <p style="font-size: 1rem;" id="contact-email"></p>
+    <script>
+      // Obfuscated email to prevent scraping
+      const u = 'james'; const d = 'jamesmansell.nz';
+      const el = document.getElementById('contact-email');
+      const a = document.createElement('a');
+      a.href = 'mailto:' + u + '@' + d;
+      a.textContent = u + '@' + d;
+      el.appendChild(a);
+    </script>
+    <noscript><p style="font-size: 1rem;">james [at] jamesmansell.nz</p></noscript>
+  </section>
+
+</Base>

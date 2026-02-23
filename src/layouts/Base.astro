@@ -1,0 +1,72 @@
+---
+interface Props {
+  title: string;
+  description?: string;
+}
+
+const { title, description = "AI, information, and institutional transformation — from a practitioner, not a vendor." } = Astro.props;
+---
+
+<html lang="en-NZ">
+  <head>
+    <meta charset="utf-8" />
+    <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <meta name="description" content={description} />
+    <title>{title}</title>
+    <style is:global>
+      @import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600&family=Lora:ital,wght@0,400;0,600;1,400&display=swap');
+
+      :root {
+        --color-bg: #fafaf9;
+        --color-text: #1c1917;
+        --color-text-secondary: #57534e;
+        --color-accent: #292524;
+        --color-border: #e7e5e4;
+        --color-link: #1c1917;
+        --font-sans: 'Inter', system-ui, sans-serif;
+        --font-serif: 'Lora', Georgia, serif;
+        --max-width: 680px;
+      }
+
+      * { margin: 0; padding: 0; box-sizing: border-box; }
+
+      body {
+        font-family: var(--font-sans);
+        color: var(--color-text);
+        background: var(--color-bg);
+        line-height: 1.7;
+        font-size: 17px;
+        -webkit-font-smoothing: antialiased;
+      }
+
+      a {
+        color: var(--color-link);
+        text-decoration-thickness: 1px;
+        text-underline-offset: 3px;
+      }
+
+      a:hover {
+        text-decoration-thickness: 2px;
+      }
+    </style>
+  </head>
+  <body>
+    <header style="max-width: var(--max-width); margin: 0 auto; padding: 2.5rem 1.5rem 0;">
+      <nav style="display: flex; justify-content: space-between; align-items: baseline; gap: 2rem; flex-wrap: wrap;">
+        <a href="/" style="font-weight: 600; font-size: 1.1rem; text-decoration: none;">Dr. James Mansell</a>
+        <div style="display: flex; gap: 1.5rem; font-size: 0.9rem; color: var(--color-text-secondary);">
+          <a href="/about">Background</a>
+          <a href="https://drjamesmansell.substack.com" target="_blank" rel="noopener">Substack</a>
+          <a href="https://nz.linkedin.com/in/jhmansell/" target="_blank" rel="noopener">LinkedIn</a>
+        </div>
+      </nav>
+    </header>
+    <main style="max-width: var(--max-width); margin: 0 auto; padding: 1.5rem;">
+      <slot />
+    </main>
+    <footer style="max-width: var(--max-width); margin: 0 auto; padding: 3rem 1.5rem; font-size: 0.85rem; color: var(--color-text-secondary); border-top: 1px solid var(--color-border);">
+      <p>&copy; {new Date().getFullYear()} Dr. James Mansell · Noos Limited · Wellington, New Zealand</p>
+    </footer>
+  </body>
+</html>
