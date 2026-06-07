@@ -1,0 +1,152 @@
+---
+// Social Investment — landing page for the Targeting Simulator.
+// Deliberately styled in the Noos "instrument" look (teal/orange), not the main site theme.
+---
+
+<!DOCTYPE html>
+<html lang="en-NZ">
+<head>
+  <meta charset="utf-8" />
+  <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <meta name="description" content="An interactive teaching model of targeting performance, treatment cost and effectiveness, and return on investment in social investment." />
+  <title>Social Investment — Dr. James Mansell</title>
+  <style>
+    :root{
+      --teal-deep:#00718F; --teal:#348EA6; --teal-light:#80B8C7;
+      --lime:#A2CE4E; --orange:#F8A11C; --yellow:#FFC813;
+      --mauve:#938B92; --plum:#6D5F67;
+      --ink:#26313a; --ink-soft:#5d6b73;
+      --paper:#ffffff; --panel:#f5f8f9; --panel-2:#eef3f5; --line:#e0e8ea;
+      --font-display:"Iowan Old Style","Palatino Linotype",Palatino,"Book Antiqua",Georgia,serif;
+      --font-sans:-apple-system,BlinkMacSystemFont,"Segoe UI",Helvetica,Arial,sans-serif;
+      --shadow:0 1px 2px rgba(38,49,58,.04),0 10px 30px rgba(38,49,58,.07);
+    }
+    *{box-sizing:border-box; margin:0; padding:0}
+    body{
+      font-family:var(--font-sans); color:var(--ink); background:var(--panel-2); line-height:1.65;
+      -webkit-font-smoothing:antialiased;
+      background-image:radial-gradient(circle at 12% -8%, rgba(248,161,28,.06), transparent 40%),
+                       radial-gradient(circle at 90% 2%, rgba(52,142,166,.07), transparent 44%);
+      background-attachment:fixed;
+    }
+    .wrap{max-width:860px; margin:0 auto; padding:26px 24px 70px}
+    a{color:var(--teal-deep)}
+
+    /* top bar */
+    nav.top{display:flex; justify-content:space-between; align-items:baseline; gap:1.5rem; flex-wrap:wrap; padding:4px 2px 24px}
+    nav.top .home{font-family:var(--font-display); font-weight:600; font-size:1.15rem; color:var(--plum); text-decoration:none}
+    nav.top .links{display:flex; gap:1.4rem; font-size:.9rem}
+    nav.top .links a{color:var(--ink-soft); text-decoration:none}
+    nav.top .links a:hover{color:var(--teal-deep)}
+    nav.top .links a.here{color:var(--teal-deep); font-weight:600}
+    .accentbar{height:4px; border-radius:3px; margin:0 2px 34px;
+      background:linear-gradient(90deg,var(--yellow),var(--orange) 32%,var(--lime) 62%,var(--teal) 100%)}
+
+    .eyebrow{font-size:11px; font-weight:700; letter-spacing:.16em; text-transform:uppercase; color:var(--mauve)}
+    h1{font-family:var(--font-display); font-weight:600; font-size:2.4rem; line-height:1.15; margin:10px 0 0; color:var(--ink)}
+    .lede{font-size:1.12rem; color:var(--ink-soft); margin-top:18px; max-width:62ch}
+    .lede strong{color:var(--ink)}
+
+    section.intro{padding:6px 2px 30px}
+
+    /* the clickable panel */
+    a.panel{display:block; text-decoration:none; color:inherit; background:var(--paper);
+      border:1px solid var(--line); border-radius:16px; box-shadow:var(--shadow); overflow:hidden;
+      transition:transform .15s ease, box-shadow .15s ease, border-color .15s ease}
+    a.panel:hover{transform:translateY(-3px); box-shadow:0 2px 4px rgba(38,49,58,.05),0 18px 44px rgba(38,49,58,.12); border-color:var(--teal-light)}
+    .panel .bar{height:5px; background:linear-gradient(90deg,var(--yellow),var(--orange) 32%,var(--lime) 62%,var(--teal) 100%)}
+    .panel .body{padding:26px 28px}
+    .panel .row{display:flex; align-items:center; gap:18px}
+    .panel img{width:54px; height:auto; display:block; flex:0 0 auto}
+    .panel h2{font-family:var(--font-display); font-weight:600; font-size:1.5rem; margin:0; color:var(--ink)}
+    .panel .kicker{font-size:11px; font-weight:700; letter-spacing:.12em; text-transform:uppercase; color:var(--teal); margin-bottom:3px}
+    .panel p.desc{font-size:1rem; color:var(--ink-soft); margin:16px 0 0}
+    .panel .cta{display:inline-flex; align-items:center; gap:7px; margin-top:18px; font-weight:600; color:var(--teal-deep); font-size:1rem}
+    a.panel:hover .cta{gap:11px}
+
+    .teaches{list-style:none; margin:24px 0 0; padding:0; display:grid; grid-template-columns:1fr 1fr; gap:10px 26px}
+    @media(max-width:600px){.teaches{grid-template-columns:1fr}}
+    .teaches li{font-size:.97rem; color:var(--ink-soft); padding-left:20px; position:relative}
+    .teaches li::before{content:""; position:absolute; left:0; top:9px; width:8px; height:8px; border-radius:50%; background:var(--orange)}
+    .teaches b{color:var(--ink)}
+
+    .secondary{margin-top:26px; display:flex; flex-wrap:wrap; gap:14px; align-items:center}
+    .doc-link{display:inline-flex; align-items:center; gap:9px; font-size:.97rem; font-weight:600; color:var(--teal-deep);
+      text-decoration:none; padding:11px 16px; border:1px solid var(--line); border-radius:10px; background:var(--paper)}
+    .doc-link:hover{border-color:var(--teal); background:var(--panel)}
+    .note{font-size:.86rem; color:var(--mauve); margin-top:30px; max-width:70ch; line-height:1.6}
+
+    footer{margin-top:42px; padding-top:20px; border-top:1px solid var(--line); font-size:.85rem; color:var(--mauve)}
+  </style>
+</head>
+<body>
+  <div class="wrap">
+    <nav class="top">
+      <a class="home" href="/">Dr. James Mansell</a>
+      <div class="links">
+        <a class="here" href="/social-investment">Social Investment</a>
+        <a href="/about">Background</a>
+        <a href="https://drjamesmansell.substack.com" target="_blank" rel="noopener">Substack</a>
+        <a href="https://nz.linkedin.com/in/jhmansell/" target="_blank" rel="noopener">LinkedIn</a>
+      </div>
+    </nav>
+    <div class="accentbar"></div>
+
+    <section class="intro">
+      <p class="eyebrow">Interactive teaching tool</p>
+      <h1>Social Investment</h1>
+      <p class="lede">
+        Social investment means directing help to the people who will benefit most — and being
+        honest about the trade-offs. <strong>You can&rsquo;t treat everyone, and you can&rsquo;t
+        perfectly tell who needs help.</strong> So how far down the risk list should you go?
+        This interactive model lets you feel that decision for yourself.
+      </p>
+    </section>
+
+    <a class="panel" href="/social-investment/simulator.html">
+      <div class="bar"></div>
+      <div class="body">
+        <div class="row">
+          <img src="/social-investment/noos-logo.png" alt="" />
+          <div>
+            <div class="kicker">Open the model</div>
+            <h2>Targeting Performance &amp; Return on Investment</h2>
+          </div>
+        </div>
+        <p class="desc">
+          Move the sliders and watch the ROC curve, the return on investment, and the total
+          benefit respond live. See how targeting quality, treatment cost, effectiveness and
+          future harm interact — and where the optimal investment point really sits. Five built-in
+          scenarios run from the &ldquo;base-rate trap&rdquo; to cream-skimming.
+        </p>
+        <ul class="teaches">
+          <li>Why a &ldquo;90% accurate&rdquo; tool can still <b>lose money</b></li>
+          <li>The gap between best <b>ROI</b> and most <b>total good</b></li>
+          <li>When to target tightly &mdash; and when to <b>go universal</b></li>
+          <li>How <b>cream-skimming</b> drops you below the frontier</li>
+        </ul>
+        <span class="cta">Launch the simulator &rarr;</span>
+      </div>
+    </a>
+
+    <div class="secondary">
+      <a class="doc-link" href="/social-investment/Targeting-Simulator-Guide.pdf" target="_blank" rel="noopener">
+        📄 &nbsp;User guide (PDF)
+      </a>
+      <span style="font-size:.92rem; color:var(--ink-soft)">A plain-English walkthrough with a worked example and exercises.</span>
+    </div>
+
+    <p class="note">
+      This is a tool for understanding the <em>concepts</em>, not an operational forecaster. It uses
+      a clean signal-detection model and measures benefit in fiscal terms only — the wider wellbeing
+      a successful intervention creates (employment, education, health, reduced harm) is real and
+      often far larger, and calls for a broader, multi-dimensional approach.
+    </p>
+
+    <footer>
+      &copy; {new Date().getFullYear()} Dr. James Mansell &middot; Noos Limited &middot; Wellington, New Zealand
+    </footer>
+  </div>
+</body>
+</html>
