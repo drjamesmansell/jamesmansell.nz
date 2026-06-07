@@ -9,8 +9,9 @@
   <meta charset="utf-8" />
   <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
   <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <meta name="robots" content="noindex, nofollow" />
   <meta name="description" content="An interactive teaching model of targeting performance, treatment cost and effectiveness, and return on investment in social investment." />
-  <title>Social Investment — Dr. James Mansell</title>
+  <title>Social Investment Policy Flight Simulator — Dr. James Mansell</title>
   <style>
     :root{
       --teal-deep:#00718F; --teal:#348EA6; --teal-light:#80B8C7;
@@ -61,6 +62,7 @@
     .panel img{width:54px; height:auto; display:block; flex:0 0 auto}
     .panel h2{font-family:var(--font-display); font-weight:600; font-size:1.5rem; margin:0; color:var(--ink)}
     .panel .kicker{font-size:11px; font-weight:700; letter-spacing:.12em; text-transform:uppercase; color:var(--teal); margin-bottom:3px}
+    .panel .subname{font-size:.95rem; color:var(--mauve); font-style:italic; margin-top:3px}
     .panel p.desc{font-size:1rem; color:var(--ink-soft); margin:16px 0 0}
     .panel .cta{display:inline-flex; align-items:center; gap:7px; margin-top:18px; font-weight:600; color:var(--teal-deep); font-size:1rem}
     a.panel:hover .cta{gap:11px}
@@ -75,6 +77,14 @@
     .doc-link{display:inline-flex; align-items:center; gap:9px; font-size:.97rem; font-weight:600; color:var(--teal-deep);
       text-decoration:none; padding:11px 16px; border:1px solid var(--line); border-radius:10px; background:var(--paper)}
     .doc-link:hover{border-color:var(--teal); background:var(--panel)}
+    .reading{margin-top:36px}
+    .reading-h{font-size:11px; font-weight:700; letter-spacing:.14em; text-transform:uppercase; color:var(--mauve); margin-bottom:14px}
+    .paper{display:block; text-decoration:none; padding:14px 16px; border:1px solid var(--line); border-radius:10px; background:var(--paper); margin-bottom:10px; transition:.15s}
+    .paper:hover{border-color:var(--teal); background:var(--panel)}
+    .paper-t{display:block; font-weight:600; color:var(--teal-deep); font-size:1.02rem}
+    .paper-t::after{content:" ↗"; color:var(--mauve); font-size:.82em}
+    .paper-d{display:block; font-size:.9rem; color:var(--ink-soft); margin-top:3px; line-height:1.5}
+
     .note{font-size:.86rem; color:var(--mauve); margin-top:30px; max-width:70ch; line-height:1.6}
 
     footer{margin-top:42px; padding-top:20px; border-top:1px solid var(--line); font-size:.85rem; color:var(--mauve)}
@@ -97,10 +107,15 @@
       <p class="eyebrow">Interactive teaching tool</p>
       <h1>Social Investment</h1>
       <p class="lede">
-        Social investment means directing help to the people who will benefit most — and being
-        honest about the trade-offs. <strong>You can&rsquo;t treat everyone, and you can&rsquo;t
-        perfectly tell who needs help.</strong> So how far down the risk list should you go?
-        This interactive model lets you feel that decision for yourself.
+        Social investment is about better allocating our effort towards more of
+        <strong>what works</strong>. But that requires being able to identify, and allocate towards,
+        the people who most need help — and not those who don&rsquo;t.
+      </p>
+      <p class="lede" style="margin-top:16px">
+        So understanding need — telling who needs services from who doesn&rsquo;t — is a
+        <strong>core driver</strong> of both the cost of any programme and its likely return:
+        in how many people you genuinely support, and in fiscal terms too. This model lets you
+        explore how that works for yourself.
       </p>
     </section>
 
@@ -111,20 +126,21 @@
           <img src="/social-investment/noos-logo.png" alt="" />
           <div>
             <div class="kicker">Open the model</div>
-            <h2>Targeting Performance &amp; Return on Investment</h2>
+            <h2>Social Investment Policy Flight Simulator</h2>
+            <div class="subname">Who to help — and how far down the list to go</div>
           </div>
         </div>
         <p class="desc">
-          Move the sliders and watch the ROC curve, the return on investment, and the total
-          benefit respond live. See how targeting quality, treatment cost, effectiveness and
-          future harm interact — and where the optimal investment point really sits. Five built-in
-          scenarios run from the &ldquo;base-rate trap&rdquo; to cream-skimming.
+          Move the sliders and watch how your ability to identify need shapes everything — who you
+          reach, who you miss, how far it makes sense to extend a programme, and the return it earns.
+          Five built-in scenarios draw out the core trade-offs, from the &ldquo;base-rate trap&rdquo;
+          to cherry-picking the easy cases.
         </p>
         <ul class="teaches">
-          <li>Why a &ldquo;90% accurate&rdquo; tool can still <b>lose money</b></li>
-          <li>The gap between best <b>ROI</b> and most <b>total good</b></li>
-          <li>When to target tightly &mdash; and when to <b>go universal</b></li>
-          <li>How <b>cream-skimming</b> drops you below the frontier</li>
+          <li>Why a &ldquo;90%-accurate&rdquo; tool can still reach mostly the <b>wrong people</b></li>
+          <li>The gap between the most <b>efficient</b> programme and the one that <b>supports the most people</b></li>
+          <li>When to target tightly &mdash; and when to <b>help everyone</b></li>
+          <li>How <b>cream-skimming</b> the easy cases fails those who need help most</li>
         </ul>
         <span class="cta">Launch the simulator &rarr;</span>
       </div>
@@ -137,11 +153,24 @@
       <span style="font-size:.92rem; color:var(--ink-soft)">A plain-English walkthrough with a worked example and exercises.</span>
     </div>
 
+    <div class="reading">
+      <h3 class="reading-h">Read more</h3>
+      <a class="paper" href="/social-investment/papers/early-access-to-effective-services.pdf" target="_blank" rel="noopener">
+        <span class="paper-t">Early Access to Effective Services</span>
+        <span class="paper-d">Child, Youth &amp; Family / Ministry of Social Development, 2009 — the knowledge capabilities built to target the right services to the right person at the right time.</span>
+      </a>
+      <a class="paper" href="/social-investment/papers/reframing-child-protection.pdf" target="_blank" rel="noopener">
+        <span class="paper-t">Reframing Child Protection</span>
+        <span class="paper-d">Mansell, Ota, Erasmus &amp; Marks, <em>Children and Youth Services Review</em>, 2011 — the signal-detection model of intake decisions this simulator is built on.</span>
+      </a>
+    </div>
+
     <p class="note">
-      This is a tool for understanding the <em>concepts</em>, not an operational forecaster. It uses
-      a clean signal-detection model and measures benefit in fiscal terms only — the wider wellbeing
-      a successful intervention creates (employment, education, health, reduced harm) is real and
-      often far larger, and calls for a broader, multi-dimensional approach.
+      This is a tool for <em>understanding the concepts</em> — not for planning. It is a deliberately
+      simplified version of the analysis an economist or analyst would do, but useful because it draws
+      out many of the core ideas and trade-offs. It measures value simply, including a fiscal lens; the
+      wider wellbeing real services create — employment, education, health, reduced harm — is larger
+      again, and calls for a broader, multi-dimensional approach.
     </p>
 
     <footer>
