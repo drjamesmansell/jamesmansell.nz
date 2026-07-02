@@ -1,0 +1,14 @@
+{
+  "redirects": [
+    {
+      "source": "/flightdeck-840cc235",
+      "destination": "/social-investment",
+      "permanent": true
+    },
+    {
+      "source": "/flightdeck-840cc235/:path*",
+      "destination": "/social-investment/:path*",
+      "permanent": true
+    }
+  ]
+}
